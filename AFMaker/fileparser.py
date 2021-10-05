@@ -1,4 +1,8 @@
 
+"""
+Neste ficheiro se definen as funciones encargadas de parsear o ficheiro de texto introducido
+que conten a especificacion da maquina.
+"""
 
 def getMachineInfo(inputFile):
         #lee o arquivo e devolve o seu contido como unha lista de strings, eliminando /n
@@ -15,8 +19,11 @@ def getMachineInfo(inputFile):
         transitions = __getTransitions(allLines, allStates)
         return allStates, finalState, symbols, transitions
 
-#specString: string con formato "#num x y z"
-#devolve [x, y, z], num
+"""
+specString: string con formato "#num x y z"
+devolve [x, y, z], num
+"""
+
 def __getSpecs(specString):
     list = specString.split(' ')
     #eliminamos o primer elemento da lista
@@ -25,15 +32,17 @@ def __getSpecs(specString):
     #devolvemos a lista
     return list
 
-#recibe unha lista con todas as transicions e os estados
-#devolve un diccionarion que ten como claves os estados e como valores unha lista das transicions
+"""
+recibe unha lista con todas as transicions e os estados
+devolve un diccionarion que ten como claves os estados e como valores unha lista das transicions
+"""
+
 def __getTransitions(list, states):
     transitions = {}
     for i in range(len(list)):
         #obtenemos todos
         nextStates = list[i].split('#')
         nextStates.pop()
-        print(nextStates)
         afnList = []
         for state in nextStates:
             state=state.strip()
