@@ -1,0 +1,5 @@
+#4 q00 q10 q20 qaa
+#1 qaa
+#3 1 2 a
+--TABLA DE TRANSICIONES--
+q10 # q20 # # q10 q20 qaa #
