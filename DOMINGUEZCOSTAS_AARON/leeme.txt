@@ -1,0 +1,11 @@
+Para executar a aplicacion é necesatio ter python3 instalado.
+
+O comando é:
+
+python3 afmaker.py nomeFicheiro
+
+Por exemplo, para executalo coa descripcion da máquina expendedora se empregaría:
+
+python3 afmaker.py expendedora.txt
+
+A continuación no menu se poden introducir de forma iterativa a cantidade de cadeas que se queira, así como ver a especificación do autómata dentro da aplicación.
