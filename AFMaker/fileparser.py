@@ -36,17 +36,19 @@ def __getSpecs(specString):
 
 """
 recibe unha lista con todas as transicions e os estados
-devolve un diccionarion que ten como claves os estados e como valores unha lista das transicions
+devolve un diccionario que ten como claves os estados e como valores unha lista das transicions
 """
 
 def __getTransitions(list, states):
     transitions = {}
     for i in range(len(list)):
-        #obtenemos todos
+        #obtenemos todos e os separamos por #
         nextStates = list[i].split('#')
+        #o ultimo sobra, e o eliminamos
         nextStates.pop()
         afnList = []
         for state in nextStates:
+            #separamos os estados cando son varios
             state=state.strip()
             afnList.append(state.split(' '))
 
