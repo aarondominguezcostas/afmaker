@@ -19,6 +19,8 @@ def getMachineInfo(inputFile):
         transitions = __getTransitions(allLines, allStates)
         return allStates, finalState, symbols, transitions
 
+        inputFile.close()
+
 """
 specString: string con formato "#num x y z"
 devolve [x, y, z], num

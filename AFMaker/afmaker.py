@@ -3,14 +3,10 @@ import argparse
 import fileparser
 from automata import Automata
 
-
 def main(args):
     #print(fileparser.getMachineInfo(args.file))
     allStates, finalState, symbols, transitions = fileparser.getMachineInfo(args.file)
-    maquina = Automata(allStates, finalState, symbols, transitions)
 
-    #menu para introducir cadeas e ver a sua execucion
-    print("Maquina inicializada correctamente!\n")
     opt = True
     while opt:
         print("Bienvenido. Opciones:\n")
@@ -18,7 +14,11 @@ def main(args):
         print("2. Salir")
         opt = input("Selecciona una opcion: ")
         if opt=="1":
+            maquina = Automata(allStates, finalState, symbols, transitions)
             str = input("Introduce la cadena: ")
+            maquina.run(str)
+            print(maquina.actualState)
+            print("\n\n")
         elif opt=="2":
             opt = False
         else:
